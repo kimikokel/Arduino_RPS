@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock, Paper, Scissor!</title>
+  <script src="game.js"></script>
+  <link href="games.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <!-- <nav>
+  <a href="home.html"><img src="home.png" id="homeicon" alt="Home Icon"></a>
+  <label class="logo">Kel's Webpage</label>
+
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="aboutme.html">About Me</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a class="active" href="minigames.html">MiniGames</a></li>
+    <li><a href="contactme.html">Contact</a></li>
+  </ul>
+</nav> -->
+
+  <!-- <br><br><br><br><br><br> -->
+  <!-- <marquee behavior="alternative" style="color:black;">Music Playing: Comet - YOASOBI (Piano Version)</marquee> -->
+  <!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/Le8GpuyCuX0?autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
+
+  <div class="parent">
+    <h1 id="para">Rock Paper Scissors!</h1>
+  </div>
+
+
+  <div class="user">
+    <div class="box">
+    <h2 style="color:rgb(232, 137, 29)">Computer Choice:</h2>
+    <div class="center">
+      <img src="" style="rotate:90deg; width: 90px; padding: 30px; margin:auto; display: block;" id="com">
+    </div>
+  </div>
+  <!-- <div class="box"> -->
+    <!-- <h2 class="box">vs</h2> -->
+  <!-- </div> -->
+
+  <div class="box">
+    <h2 style="color:darkgreen">Your Choice:</h2>
+    <div class="center">
+      <img src="" style="rotate:-90deg; width: 90px; padding: 30px; margin:auto; display: block;" id="player">
+    </div>
+  </div>
+</div>
+
+  <h2 id="h2">Result: </h2>
+  <div class="user">
+    <h2 id="result" class="result"></h2>
+  </div>
+
+</body>
+<br><br><br>
+
+<script>
+  document.getElementById("com").src = "pics/empty.png";
+  document.getElementById("player").src = "pics/empty.png";
+  document.getElementById("result").innerHTML = "";
+
+  setTimeout(() => {
+    changeJS();
+  }, 1500);
+
+  let para = document.getElementById("para");
+  let paragraph = para.innerText.split('');        //splits the whole paragraph into one character at a time
+
+  para.innerHTML = "";                             //h1 tag is now empty
+
+  for (let i = 0; i < paragraph.length; i++) {       //i will +1 every time it loops until i is larger than the whole paragraph
+    let change = "<h1>" + paragraph[i] + "</h1>";  //paragraph[i] returns each character (for example paragraph[0] returns "C")
+    //adding the h1 tag to each character to place it in html
+    if (change == "<h1> </h1>") {                  //if the tag has an empty space, html can't figure out if that is empty
+      change = "<h1>&nbsp;</h1>"                   //therefore, by adding &nbsp; which means a space will replace the empty string
+    }
+    para.innerHTML += change;                      //the characters with h1 tags will then be added to the innerhtml
+  }
+
+</script>
+
+<br><br>
+
+</html>
