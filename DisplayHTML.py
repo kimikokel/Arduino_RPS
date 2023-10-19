@@ -1,8 +1,4 @@
-# from selenium import webdriver
-# from selenium.webdriver.chrome.options import Options
 import warnings
-# import Main
-import ReceiveArd
 
 warnings.filterwarnings("ignore")
 
@@ -34,10 +30,6 @@ def changeJS(com, player, result, driver):
         js_file.write(javascript_code)
     
     driver.refresh()
-
-    # while(True):
-    #     # player = ReceiveArd.getString()
-    #     pass
         
 
 # driver.quit()

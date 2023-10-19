@@ -15,7 +15,7 @@ result = ""
 
 driver = webdriver.Chrome()
 
-driver.get("file:///Users/kimiko_kel/Desktop/Code/Arduino/Arduino_RPS/minigames.html")
+driver.get("file:///Users/kimiko_kel/Desktop/Code/Arduino/Arduino_RPS/rps.html")
 
 DisplayHTML.changeJS("empty", "empty", "", driver)
 
@@ -23,16 +23,15 @@ def play(player):
 
     if ("rock" in player or "paper" in player or "scissor" in player or "done" in player):
 
-        # print("play: ", player)
+        print("player selection received from Arduino: ", player)
 
         comp = random.choice(select)
+        print("comp random selection: ", comp)
 
         condition = Game.RPS(player, comp)
 
-        # SendArd.send(condition)
         S = th.Timer(0, SendArd.send, [condition])  
         S.start()  
-        # time.sleep(1)
 
         if (condition == 0):
             result = "lose"
@@ -44,18 +43,16 @@ def play(player):
             return False
         else:
             return 0
+        print("result returned: ", result)
         
-        # time.sleep(1)
         DisplayHTML.changeJS(comp, player, result, driver)
     return 0
 
 
 while True:
-    # time.sleep(0.5)
     player = ReceiveArd.getString()
-    # time.sleep(0.5)
+
     play(player)
+
     if (player == "done"):
-        False
         break
-    pass

@@ -33,17 +33,14 @@ void loop() {
 
   if (red == 0) {
     Serial.println("scissor");
-    // delay(3000);
   }
 
   if (yellow == 0) {
     Serial.println("paper");    
-    // delay(3000);
   } 
 
   if (green == 0) {
     Serial.println("rock");
-    // delay(3000);
   } 
 
   if (rst == 0) {
@@ -53,14 +50,7 @@ void loop() {
   if (Serial.available() > 0) {
     digitalWrite(ledSignal, HIGH);
     data = Serial.readString();
-    // Serial.println(data);
     
-    // if (serialData == '0') {
-    //   digitalWrite(ledBlu, HIGH);
-    //   digitalWrite(ledRed, LOW);
-    //   digitalWrite(ledGrn, LOW);
-    //   delay(1000);
-    // }
     if (data == "0") {
       digitalWrite(ledSignal, HIGH);
       digitalWrite(ledBlu, LOW);

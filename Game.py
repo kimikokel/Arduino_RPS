@@ -1,8 +1,4 @@
 
-# comp = "scissor"
-
-# print("comp choose: " + comp)
-
 def RPS(player, comp):
     if (comp == "rock"):
         if (player == "scissor"):  

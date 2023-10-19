@@ -1,8 +1,8 @@
 
     function changeJS() {
-        var com = "scissor";
-        var player = "rock";
-        var result = "win";
+        var com = "empty";
+        var player = "empty";
+        var result = "";
 
         var comPNG = "pics/" + com + ".png"
         var plyPNG = "pics/" + player + ".png"
